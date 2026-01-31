@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>❤️ رسالة حب</title>
+<style>
+body {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+  color: white;
+  text-align: center;
+}
+.box {
+  background: rgba(255,255,255,0.2);
+  padding: 40px;
+  border-radius: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h1>❤️ بحبك ❤️</h1>
+<p>من يوم 15 / 8 / 2024  
+وإنت أحلى حاجة في حياتي 🌹</p>
+
+<div id="timer"></div>
+</div>
+
+<script>
+const target = new Date("2024-08-15").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  let diff = Math.abs(now - target);
+
+  let d = Math.floor(diff / (1000*60*60*24));
+  let h = Math.floor(diff % (1000*60*60*24) / (1000*60*60));
+  let m = Math.floor(diff % (1000*60*60) / (1000*60));
+  let s = Math.floor(diff % (1000*60) / 1000);
+
+  document.getElementById("timer").innerHTML =
+    d + " يوم " + h + " ساعة " + m + " دقيقة " + s + " ثانية";
+}, 1000);
+</script>
+
+</body>
+</html>
